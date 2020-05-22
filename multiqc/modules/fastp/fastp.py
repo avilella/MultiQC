@@ -148,7 +148,7 @@ class MultiqcModule(BaseMultiqcModule):
         s_name = f['s_name']
         cmd = parsed_json['command'].split()
         for i,v in enumerate(cmd):
-            if v == '-i':
+            if v == '-i' or v == '--in1':
                 s_name = self.clean_s_name(cmd[i+1], f['root'])
         if s_name == 'fastp':
             log.warning('Could not parse sample name from fastp command: {}'.format(f['fn']))
